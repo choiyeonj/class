@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+/* :root -> 변수를 줌으로써 수정할때도 한꺼번에 수정가능 */
+:root{
+    /* --(하이픈2개)속성이름:속성값 */
+    --green:#f00;
+    --padding-top10:10px;
+    --padding-buttom10:10px;
+}
+
+.전체 {
+    font-size: 1.2em;
+    /* 16px x 1.2 = 19px */
+}
+
+.전체 .첫째 {
+    font-size: 0.5em;
+    /* 16px x 1.2 x 0.5 */
+}
+
+.전체 .첫째 .첫손자 {
+    background-color: rgb(155, 155, 245);
+    color: var(--green);
+    /* viewport의 높이 */
+    height: 100vh;
+    /* viewport의 넓이 */
+    /* font-size: 12vw; */
+    font-size: 0.3rem;
+    /* r은 root를 의미하는데 html에서의 root는
+    html요소를 의미함  html의 기본폰트크기는 16px이므로
+    16px을 기준으로 계산함 (16px x 0.3) */
+    padding-top: var(--padding-top10);
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.wrap{
+    background-color: bisque;
+    width: 800px;
+    margin: 0 auto;
+    padding: 200px 0; /* 위아래는 200px 양옆은 0 */
+    margin-top: 50px;
+}
+/* margin의 병합현상이 일어났을 때 전체를 잡고 padding을 준다 */
+.wrap>div{
+    height: 300px;
+    background-color: rgb(223, 153, 153);
+    border-top: 1px solid #222;
+}
+.wrap>div+div{
+    margin-top: 200px;
+    /* 바로위에 형제가 있을때 margin-top이 적용됨
+    맨 첫번째 div는 위에 형제가 없으므로 적용이 안되지만
+    전체가 pdding을 주면 병합현상 해결가능 */
+}
+.wrap .section2 div{
+    margin-top: 50px;
+}

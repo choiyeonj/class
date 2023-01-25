@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.약::after {
+    content: '';
+    clear: both;
+    display: block;
+    /* :before, :after는 인라인요소임
+    clear: both;는 블럭요소에서만 효능이 발휘되므로
+    display로 block으로 설정 */
+}
+
+/* 부모 영역의 깨짐 방지 */
+
+.전체 {
+    width: 600px;
+    /* 넓이값 */
+    margin: auto;
+    text-align: center;
+    background-color: aqua;
+    padding: 20px;
+}
+
+/* 부모는 자식의 높이를 따라감
+자식은 부모의 넓이를 따라감 */
+.전체 {
+    border: red solid 2px;
+}
+
+/* 아래쪽에 적은것이 힘을 가진다(덮어쓰기) */
+
+/* end전체 */
+
+
+.전체 .첫째 {
+    background-color: pink;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* end첫째 */
+
+
+.전체 .둘째 {
+    background-color: aquamarine;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.전체 .둘째 .둘자 {
+    float: right;
+    width: 33.3333%;
+}
+
+.전체 .둘째 .둘자1 {
+    background-color: coral;
+}
+
+.전체 .둘째 .둘자2 {
+    background-color: darksalmon;
+}
+
+.전체 .둘째 .둘자3 {
+    background-color: goldenrod;
+}
+
+/* end둘째 */
+
+
+.전체 .셋째 {
+    background-color: cornflowerblue;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.전체 .셋째 .세자 {
+    float: left;
+}
+
+.전체 .셋째 .세자1 {
+    background-color: darkmagenta;
+    width: 50%;
+}
+
+.전체 .셋째 .세자1 span {
+    width: 100px;
+    background-color: beige;
+}
+
+.전체 .셋째 .세자1 span::before {
+    /* css에서 공간을 만들 수 있다 */
+    content: '앞';
+    /* 반드시 있어야 함 */
+}
+
+.전체 .셋째 .세자1 span::after {
+    content: '뒤';
+}
+
+.전체 .셋째 .세자2 {
+    background-color: darkblue;
+    width: 50%;
+}
+
+.전체 .셋째 .세자2 span {
+    background-color: darkgrey;
+}
+/* end셋째 */

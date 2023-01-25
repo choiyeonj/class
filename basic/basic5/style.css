@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.약::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.박일수 {
+    background-color: #3C6255;
+    width: 1000px;
+    margin: 0 auto;
+    /* 상하 0 좌우 auto */
+    padding: 25px 40px;
+    /* padding: 20px; 상하좌우 
+    padding: 20px 40px; 상하 좌우
+    padding: 20px 40px 50px; 상 좌우 하
+    padding: 10px 20px 30px 40px; 상 우 하 좌 */
+}
+
+.박일수 .박첫째 {
+    background-color: #61876E;
+    padding: 20px;
+}
+
+.박일수 .박첫째 .자식 {
+    width: 47.5%;
+    margin-right: 5%;
+    float: left;
+    height: 200px;
+    text-align: center;
+}
+
+.박일수 .박첫째 .자식.첫째자식1 {
+    background-color: #CCD6A6;
+    padding: 20px;
+    box-sizing: border-box;
+    /* box-sizing: border-box;
+    => width: + padding + border 를 영역내로 포함 */
+    border: white solid 2px;
+    line-height: 160px;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 {
+    background-color: #FCF9BE;
+    margin-right: 0;
+    line-height: 100px;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 object {
+    width: 100%;
+    height: 100%;
+}
+
+/* end박첫째 */
+
+
+.박일수 .박둘째 {
+    background-color: #86C8BC;
+    padding: 20px;
+    margin-top: 30px;
+    /* margin: 30px 0 0; */
+}
+
+/* 띄워쓰기 -> 자손
+   >(꺽쇠)  -> 직계자식 ex)박둘째>div.둘자식1 직계자식중 둘자식1
+ */
+.박일수 .박둘째>div {
+    background-color: #344D67;
+    color: white;
+    width: 23.5%;
+    float: left;
+    height: 100px;
+    margin-right: 2%;
+    text-align: center;
+    line-height: 100px;
+}
+
+.박일수 .박둘째>div.둘자식1 {
+    background-image: url(img2.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    /* img반복없음 */
+    background-position: 105px 40px;
+    /* x축 y축 */
+    transition: 0.3s;
+}
+
+.박일수 .박둘째>div.둘자식1:hover {
+    background-size: 100px;
+    background-position: center;
+}
+
+
+.박일수 .박둘째>div.둘자식2 {
+    background: #ffb26b url(img1.png) no-repeat 63px 1px/100px;
+    /* background-size: 100px; */
+    transition: 0.3s;
+}
+
+.박일수 .박둘째>div.둘자식2:hover {
+    background-image: url(img3.png);
+    background-size: 110px;
+}
+
+
+
+.박일수 .박둘째>div.둘자식3 {
+    position: relative;
+    overflow: hidden;
+    /* 영역보다 넘치는 자식요소를 숨김 */
+}
+
+.박일수 .박둘째>div.둘자식3 iframe {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+
+.박일수 .박둘째>div.둘자식4 {
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.박일수 .박둘째>div.둘자식4 iframe {
+    width: 100%;
+}
+
+/* end박둘째 */
+
+
+.박일수 .박세째 {
+    background-color: #EAE7B1;
+    margin-top: 30px;
+    padding: 20px;
+    color: #EAE7B1;
+    font-size: 20px;
+    border: white solid 7px;
+}
+
+.박일수 .박세째>div {
+    background-color: #393E46;
+    text-align: center;
+    line-height: 200px;
+    /* line-height는 내용이 한 줄일 때 사용하면 좋다.
+    두 줄 이상일 때는 position 사용 */
+    width: 32%;
+    height: 200px;
+    float: left;
+    margin-right: 2%;
+    border-radius: 10px;
+
+}
+
+.박일수 .박세째>div.세자식1 {}
+
+.박일수 .박세째>div.세자식2 {}
+
+.박일수 .박세째>div.세자식3 {
+    margin-right: 0;
+}

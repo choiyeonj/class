@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+section::after {
+    content: "\f4fb";
+    /* fontawesome 5버젼을 CSS에서 사용하기 위해서는
+    font-family, font-weight가 같이 들어가야 함 */
+    font-family: "Font Awesome 5 Free";
+    /* 무료버전 사용시에는 Pro를 Free로 변경함 */
+    font-weight: 900;
+}
+
+.wrap2 {
+    position: relative;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+}
+
+.wrap2 .section2 {
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    /* calc계산기 -> - 뒤에 무조건 띄워서 작성 
+    transform: translate(-50%, -50%); */
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}

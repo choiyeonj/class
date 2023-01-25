@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.md::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#전체 {
+    background-color: lightblue;
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#전체 .첫째자식 {
+    background-color: aquamarine;
+    padding: 20px;
+    /* 패딩을 줬기때문에 따로 wrap으로 싸서 position: relative을 준다 */
+}
+
+#전체 .첫째자식 .wrap {
+    position: relative;
+}
+
+#전체 .첫째자식 .첫째손자 {
+    background-color: lightskyblue;
+    height: 350px;
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#전체 .첫째자식 .첫손2 {
+    background-color: cornflowerblue;
+    opacity: 0;
+    /* 투명도 */
+    position: absolute;
+    /* 형제끼리는 포지션 잡아줄수 없음
+    부모가 잡아줘야 함(position: relative) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: 0.3s;
+    background-image: url(../img/img2.jpg);
+}
+
+#전체 .첫째자식:hover .첫손2 {
+    opacity: 1;
+}
+
+#전체 .둘째자식 {
+    position: relative;
+    background-color: plum;
+    margin-top: 30px;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#전체 .둘째자식 .둘째손자 {
+    background-color: mediumpurple;
+    /* width: 100%; */
+    /* 기본값, block요소는 부모의 넓이를 무조건 100%차지한다*/
+    /* height: 100%; */
+    /* 자식은 부모의 padding에 침범하지 못한다 */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    /* 넓이 100%, 높이 100% 준것과 똑같다 20px을 준다면 padding을 20px 준 것과
+    같다 후에 넓이값과 높이값을 주게되면 컴퓨터가 자동으로 실행 시키므로 
+    틀린 내용이 아님 */
+}
+
+#전체 .둘째자식 {
+    margin-bottom: 50px;
+}
+
+#전체 .셋째자식 {
+    background-color: #E8F3D6;
+    margin-top: 30px;
+    /* margin-top을 줘도 margin-bottom값이 더 크므로 
+    합쳐져서 80px이 아닌 50px이 적용됨 margin의 위아래값은 큰값이 적용되고
+    양 옆의 margin값은 합쳐짐 */
+}
+
+#전체 .셋째자식>div {
+    background-color: #CCD6A6;
+    width: 40%;
+    margin: 0 5%;
+    float: left;
+}
+
+/* ol, ul의 자식요소는 li만 가능하다 */
+#전체 .셋째자식>div ol {
+    list-style-type: upper-roman;
+}
+
+#전체 .셋째자식>div ul {
+    list-style: circle;
+}
+#전체 .셋째자식>div li{
+    border: 1px solid gray;
+}
+#전체 .넷째자식{
+    background-color: palegreen;
+    margin-top: 30px;
+    padding: 20px;
+}
+#전체 .넷째자식 .넷째손자{
+    background-color: rgb(109, 183, 109);
+}
+#전체 .넷째자식 .넷째손자 dd{
+    background-color: olivedrab;
+}

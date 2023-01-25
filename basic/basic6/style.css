@@ -1,0 +1,112 @@
+@charset "UTF-8 ";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    /* 폰트 크기의 기본값은 16px */
+    font-weight: normal;
+    /* 폰트 두께 */
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄 */
+    color: #222;
+
+}
+
+.약::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* 존재하나 보이지 않음 가상의 공간에 임의로 만든 것 */
+
+.전체 {
+    background-color: #FF7B54;
+    width: 1000px;
+    margin: 30px auto 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.전체>div+div {
+    margin-top: 30px;
+}
+
+/* >div+div 바로 위의 형제가 있을 경우에만 해당된다는 의미*/
+
+
+.전체 .첫째 {
+    background-color: #FFB26B;
+    padding: 20px;
+}
+
+.전체 .첫째:hover {
+    color: green;
+}
+
+.전체 .첫째 .첫자 {
+    background-color: #FFD5CD;
+    width: 49%;
+    height: 200px;
+    float: left;
+    text-align: center;
+
+}
+
+.전체 .첫째 .첫자.첫째자식1 {
+    margin-right: 2%;
+}
+
+.전체 .첫째 .첫자.첫째자식2 {}
+/* ---end 첫째---  */
+
+
+.전체 .둘째 {
+    background-color: #FFD56F;
+}
+
+.전체 .둘째 .앵커 {
+    background-color: blue;
+}
+
+.전체 .둘째 p {
+    width: 150px;
+    margin-top: 20px ;
+}
+/* a태그 -> 하이퍼링크 */
+.전체 .둘째 p a {}
+
+.전체 .둘째 p a img {
+    width: 100%;
+}
+/* 인라인요소는 공간을 인식하지 못한다
+    그래서 넓이, 높이값을 주어도 적용되지 않음
+    예외로는 img, button 태그는 인라인요소이지만 넓이와 높이가 적용됨 
+    
+    인라인요소 안에는 인라인요소만 들어간다
+    (인라인요소안에 블럭요소는 들어가지 않음
+    블럭요소안에는 인라인요소, 블럭요소 모두 들어감
+    span p (x) span-인라인 p-블럭
+    p span (o) 
+    span img(o)  span-인라인 img-인라인 */ 
+
+    
+/* ---end 둘째---  */
+
+
+.전체 .셋째 {
+    background-color: #939B62;
+}

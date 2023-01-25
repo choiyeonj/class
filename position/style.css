@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.md::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.전체 {
+    position: relative;
+    background-color: grey;
+    width: 600px;
+    border: 5px solid #222;
+    margin-left: 100px;
+    margin-top: 200px;
+}
+
+.전체>div {
+    width: 150px;
+    height: 150px;
+}
+
+.전체 .pink {
+    background-color: pink;
+    position: static;
+    /* 기본값 */
+    left: 50px;
+    /* static이라 적용안됨 */
+}
+
+.전체 .green {
+    background-color: green;
+    position: relative;
+    /* 원래 자신의 위치를 기억함
+    주위에 아무런 영향을 주지않음 */
+    left: 250px;
+    top: 50px;
+}
+
+.전체 .red {
+    background-color: red;
+    position: absolute;
+    /* 본래 가진 자신의 영역을 잃고
+    조상을 기준으로 삼는데 
+    조상이 기준이 되기위해서는
+    조상의 position이 relative, absolute, fixed이면
+    기준이 될 수 있다 */
+    left: 100px;
+    top: 100px;
+}
+
+.전체 .blue {
+    background-color: blue;
+    position: fixed;
+    /* 윈도우 기준으로 배치되므로
+    원래의 문서와 겹쳐지더라도 떠 있는 상태 */
+    right: 150px;
+    top: 100px;
+}
+
+.영역 {
+    background-color: grey;
+    border: 5px solid #000;
+    width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.영역>div {
+    background-color: green;
+    width: 49%;
+    float: left;
+    height: 300px;
+}
+.영역>div.포지션1{
+    margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+}
+.영역>div.포지션1 .포자{
+    width: 0%;
+    height: 0%;
+    background-color: pink;
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: 0.5s;
+}
+
+.영역>div.포지션1:hover .포자{
+    width: 120%;
+    height: 120%;
+}
+
+
+.영역>div.포지션2{
+    position: relative;
+}
+
+.영역>div.포지션2 h3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+.space {
+    height: 2000px;
+}
